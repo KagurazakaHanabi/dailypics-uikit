@@ -1,4 +1,5 @@
 import Moya
+import SwiftyJSON
 
 let TujianApiProvider = MoyaProvider<TujianApi>()
 
@@ -7,7 +8,7 @@ enum TujianApi {
     case types
     case today
     case random(count: Int = 1)
-    
+
     /// 获取分页归档
     ///
     /// page 页数，不得超过 [Recents.maximum]
@@ -50,7 +51,7 @@ extension TujianApi: TargetType {
         }
     }
 
-    var method: Method {
+    var method: Moya.Method {
         return .get
     }
 
@@ -82,5 +83,40 @@ extension TujianApi: TargetType {
         return [
             "User-Agent": "Dailypics/2.0.3 Version/200129 StoryBoard"
         ]
+    }
+}
+
+struct Photo {
+    var id: String
+    var tid: String
+    var user: String
+    var title: String
+    var content: String
+    var width: Int
+    var height: Int
+    var originUrl: String
+    var cdnUrl: String
+    var color: String
+    var date: String
+
+    static func fromJson(source: Data) -> Photo {
+        let decoded = try! JSON(data: source)
+        return fromJson(source: decoded)
+    }
+
+    static func fromJson(source: JSON) -> Photo {
+        return Photo(
+            id: source["PID"].stringValue,
+            tid: source["TID"].stringValue,
+            user: source["username"].stringValue,
+            title: source["p_title"].stringValue,
+            content: source["p_content"].stringValue,
+            width: source["width"].intValue,
+            height: source["height"].intValue,
+            originUrl: source["local_url"].stringValue,
+            cdnUrl: "https://s1.images.dailypics.cn\(source["nativePath"])!w1080",
+            color: source["theme_color"].stringValue,
+            date: source["p_date"].stringValue
+        )
     }
 }

@@ -11,7 +11,7 @@
         <scene sceneID="5Ao-M5-1NR">
             <objects>
                 <tableViewController id="Zy4-yA-J2Q" customClass="TodayViewController" customModule="dailypics" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q9b-KD-VtC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q9b-KD-VtC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -19,37 +19,29 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 月 29 日 星期三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWf-vT-c8C">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 月 29 日 星期三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWf-vT-c8C">
                                     <rect key="frame" x="16" y="8" width="343" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-7g-Xa1">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-7g-Xa1">
                                     <rect key="frame" x="16" y="33" width="343" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不要扯我的呆毛，那是我的萌点所在..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-nd-Pch">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="不要扯我的呆毛，那是我的萌点所在..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-nd-Pch">
                                     <rect key="frame" x="16" y="82" width="343" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="uyO-nd-Pch" firstAttribute="top" secondItem="Bs8-7g-Xa1" secondAttribute="bottom" constant="8" id="0hS-fw-H3O"/>
-                                <constraint firstItem="Bs8-7g-Xa1" firstAttribute="leading" secondItem="7kf-PO-lmO" secondAttribute="leading" constant="16" id="ElQ-PY-ecT"/>
-                                <constraint firstItem="uyO-nd-Pch" firstAttribute="leading" secondItem="7kf-PO-lmO" secondAttribute="leading" constant="16" id="GEe-U2-REf"/>
-                                <constraint firstItem="pWf-vT-c8C" firstAttribute="top" secondItem="7kf-PO-lmO" secondAttribute="top" constant="8" id="HKz-eb-SMS"/>
-                                <constraint firstAttribute="trailing" secondItem="pWf-vT-c8C" secondAttribute="trailing" constant="16" id="Sw6-aJ-4BP"/>
-                                <constraint firstItem="pWf-vT-c8C" firstAttribute="leading" secondItem="7kf-PO-lmO" secondAttribute="leading" constant="16" id="WdQ-wt-FMU"/>
-                                <constraint firstItem="Bs8-7g-Xa1" firstAttribute="top" secondItem="pWf-vT-c8C" secondAttribute="bottom" constant="8" id="dd6-qW-F9i"/>
-                                <constraint firstAttribute="trailing" secondItem="uyO-nd-Pch" secondAttribute="trailing" constant="16" id="p03-ef-0em"/>
-                                <constraint firstAttribute="trailing" secondItem="Bs8-7g-Xa1" secondAttribute="trailing" constant="16" id="qPV-7Q-WsS"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCard" rowHeight="128" id="LOI-OB-4gP" customClass="PhotoCard" customModule="dailypics" customModuleProvider="target">
@@ -59,21 +51,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-8k-rq5">
-                                            <rect key="frame" x="16" y="16" width="62" height="39"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-8k-rq5">
+                                            <rect key="frame" x="16" y="8" width="343" height="39"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEj-3W-vdn">
-                                            <rect key="frame" x="16" y="63" width="59" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEj-3W-vdn">
+                                            <rect key="frame" x="16" y="55" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aEj-3W-vdn" firstAttribute="top" secondItem="cPv-8k-rq5" secondAttribute="bottom" constant="8" id="2Tg-5d-14R"/>
+                                        <constraint firstItem="cPv-8k-rq5" firstAttribute="top" secondItem="aMN-mf-yx5" secondAttribute="top" constant="8" id="5xo-Hh-ayi"/>
+                                        <constraint firstItem="aEj-3W-vdn" firstAttribute="leading" secondItem="aMN-mf-yx5" secondAttribute="leading" constant="16" id="PO4-Yu-adF"/>
+                                        <constraint firstItem="cPv-8k-rq5" firstAttribute="leading" secondItem="aMN-mf-yx5" secondAttribute="leading" constant="16" id="SNR-cK-R2t"/>
+                                        <constraint firstAttribute="trailing" secondItem="cPv-8k-rq5" secondAttribute="trailing" constant="16" id="VhB-hR-c8R"/>
+                                        <constraint firstAttribute="trailing" secondItem="aEj-3W-vdn" secondAttribute="trailing" constant="16" id="e97-Ln-eRh"/>
+                                        <constraint firstItem="aEj-3W-vdn" firstAttribute="top" secondItem="cPv-8k-rq5" secondAttribute="bottom" constant="8" id="tb0-QG-9dy"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="subtitleLabel" destination="aEj-3W-vdn" id="HdY-VN-HZ0"/>
@@ -84,6 +83,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Today" image="doc.plaintext" catalog="system" id="hFX-O0-rqX"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="l3e-lw-GQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
