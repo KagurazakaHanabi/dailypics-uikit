@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A79C62F23E1834D00A12A77 /* TujianApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79C62E23E1834D00A12A77 /* TujianApi.swift */; };
+		1A79C63123E1A94100A12A77 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A79C63023E1A94100A12A77 /* PhotoCard.swift */; };
 		1A85047E23E149EA00727522 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85047D23E149EA00727522 /* TodayViewController.swift */; };
-		1A85048223E1583400727522 /* TodayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85048123E1583400727522 /* TodayHeader.swift */; };
 		1AB4CBA723E010140054B23C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4CBA623E010140054B23C /* AppDelegate.swift */; };
 		1AB4CBAB23E010140054B23C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4CBAA23E010140054B23C /* ViewController.swift */; };
 		1AB4CBAE23E010140054B23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4CBAC23E010140054B23C /* Main.storyboard */; };
@@ -18,8 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A79C62E23E1834D00A12A77 /* TujianApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TujianApi.swift; sourceTree = "<group>"; };
+		1A79C63023E1A94100A12A77 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 		1A85047D23E149EA00727522 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		1A85048123E1583400727522 /* TodayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHeader.swift; sourceTree = "<group>"; };
 		1AB4CBA323E010140054B23C /* dailypics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailypics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB4CBA623E010140054B23C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AB4CBAA23E010140054B23C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +74,8 @@
 				1AB4CBA623E010140054B23C /* AppDelegate.swift */,
 				1AB4CBAA23E010140054B23C /* ViewController.swift */,
 				1A85047D23E149EA00727522 /* TodayViewController.swift */,
-				1A85048123E1583400727522 /* TodayHeader.swift */,
+				1A79C62E23E1834D00A12A77 /* TujianApi.swift */,
+				1A79C63023E1A94100A12A77 /* PhotoCard.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				7CBC460E44CA4135FEB5B142 /* Pods-dailypics.debug.xcconfig */,
 				1D04835223A7FA4FEF84D545 /* Pods-dailypics.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -194,7 +196,8 @@
 			files = (
 				1AB4CBAB23E010140054B23C /* ViewController.swift in Sources */,
 				1AB4CBA723E010140054B23C /* AppDelegate.swift in Sources */,
-				1A85048223E1583400727522 /* TodayHeader.swift in Sources */,
+				1A79C63123E1A94100A12A77 /* PhotoCard.swift in Sources */,
+				1A79C62F23E1834D00A12A77 /* TujianApi.swift in Sources */,
 				1A85047E23E149EA00727522 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
