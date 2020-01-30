@@ -1,5 +1,7 @@
+import Alamofire
 import RxSwift
 import SwiftyJSON
+import SwiftyMarkdown
 import UIKit
 
 class TodayViewController: UITableViewController {
@@ -43,11 +45,7 @@ class TodayViewController: UITableViewController {
         }).disposed(by: disposeBag)
     }
 
-    // MARK: - TableView data source
-
-    /*override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }*/
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return today.count
@@ -56,8 +54,30 @@ class TodayViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableView.dequeueReusableCell(withIdentifier: "PhotoCard", for: indexPath) as! PhotoCard
         let data = today[indexPath.row]
+
+        var textColor: UIColor
+        if data.color.isDark() {
+            textColor = UIColor.white
+        } else {
+            textColor = UIColor.black
+        }
+
         item.titleLabel.text = data.title
-        item.subtitleLabel.text = data.content
+        item.titleLabel.textColor = textColor
+
+        let md = SwiftyMarkdown(string: data.content)
+        let plain = md.attributedString().string
+        item.subtitleLabel.text = plain.components(separatedBy: "\n")[0]
+        item.subtitleLabel.textColor = textColor.withAlphaComponent(179 / 255)
+
+        Alamofire.request(data.cdnUrl).responseData(completionHandler: { result in
+            let image = UIImage(data: result.data!)
+            item.thumbnail.image = image
+        })
         return item
+    }
+
+    func isDarkColor(color: UIColor) -> Bool {
+        return false
     }
 }

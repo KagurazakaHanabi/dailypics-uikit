@@ -96,7 +96,7 @@ struct Photo {
     var height: Int
     var originUrl: String
     var cdnUrl: String
-    var color: String
+    var color: UIColor
     var date: String
 
     static func fromJson(source: Data) -> Photo {
@@ -114,8 +114,8 @@ struct Photo {
             width: source["width"].intValue,
             height: source["height"].intValue,
             originUrl: source["local_url"].stringValue,
-            cdnUrl: "https://s1.images.dailypics.cn\(source["nativePath"])!w1080",
-            color: source["theme_color"].stringValue,
+            cdnUrl: "https://s1.images.dailypics.cn\(source["nativePath"])!w1080_jpg",
+            color: UIColor(hexString: source["theme_color"].stringValue),
             date: source["p_date"].stringValue
         )
     }

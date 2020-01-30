@@ -8,4 +8,5 @@ target 'dailypics' do
   # Pods for dailypics
   pod 'Moya/RxSwift', '~> 13.0'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SwiftyMarkdown'
 end

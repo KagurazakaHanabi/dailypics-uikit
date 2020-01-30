@@ -9,10 +9,12 @@ PODS:
   - Result (4.1.0)
   - RxSwift (4.5.0)
   - SwiftyJSON (4.3.0)
+  - SwiftyMarkdown (1.0.2)
 
 DEPENDENCIES:
   - Moya/RxSwift (~> 13.0)
   - SwiftyJSON (~> 4.0)
+  - SwiftyMarkdown
 
 SPEC REPOS:
   trunk:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - Result
     - RxSwift
     - SwiftyJSON
+    - SwiftyMarkdown
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  SwiftyMarkdown: 4fbac6395e4826cf2de56991199f92f8b7ab5a67
 
-PODFILE CHECKSUM: d773f80721ec8d6878668f84127dd2a4e4d8f345
+PODFILE CHECKSUM: d537600dea7896cc2242467973a6d4e37dd5e232
 
 COCOAPODS: 1.8.4
