@@ -14,11 +14,11 @@ class TodayViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         onRefresh()
     }
 
-    @objc func onRefresh() {
+    @objc func onRefresh() -> Void {
         today.removeAll()
 
         let weekdays = ["日", "一", "二", "三", "四", "五", "六"]
@@ -55,27 +55,16 @@ class TodayViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableView.dequeueReusableCell(withIdentifier: "PhotoCard", for: indexPath) as! PhotoCard
-        let data = today[indexPath.row]
-
-        let textColor: UIColor = data.color.isDark() ? UIColor.white : UIColor.black
-
-        item.titleLabel.text = data.title
-        item.titleLabel.textColor = textColor
-
-        let md = SwiftyMarkdown(string: data.content)
-        let plain = md.attributedString().string
-        item.subtitleLabel.text = plain.components(separatedBy: "\n")[0]
-        item.subtitleLabel.textColor = textColor.withAlphaComponent(179 / 255)
-        item.thumbnail.af.setImage(
-            withURL: URL.init(string: data.cdnUrl)!,
-            placeholderImage: UIImage(named: "Placeholder"),
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(
-                size: item.thumbnail.frame.size,
-                radius: 16
-            ),
-            imageTransition: .crossDissolve(0.2)
-        )
-
+        item.load(data: today[indexPath.row])
         return item
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let destination = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsViewController
+        destination.data = today[indexPath.row]
+        present(destination, animated: true, completion: nil)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

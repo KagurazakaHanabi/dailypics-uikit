@@ -6,7 +6,7 @@ extension UIColor {
         if hex.hasPrefix("#") {
             hex.remove(at: hex.startIndex)
         }
-        
+
         var val = UInt64()
         Scanner(string: hex).scanHexInt64(&val)
         let a, r, g, b: UInt64
@@ -23,28 +23,16 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255,
                   blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
-    
+
     func isDark() -> Bool {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
         self.getRed(&r, green: &g, blue: &b, alpha: nil)
         return (r * 255 * 299 + g * 255 * 587 + b * 255 * 114) / 1000 < 128;
     }
-    
+
     func invert() -> UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 1
         self.getRed(&r, green: &g, blue: &b, alpha: &a)
         return UIColor(red: 1.0 - r , green: 1.0 - g, blue: 1.0 - b, alpha: a)
-    }
-}
-
-extension UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-
-        set {
-            layer.cornerRadius = newValue
-        }
     }
 }
