@@ -1,4 +1,5 @@
 import Alamofire
+import AlamofireImage
 import RxSwift
 import SwiftyJSON
 import SwiftyMarkdown
@@ -13,8 +14,8 @@ class TodayViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        onRefresh()
         self.refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        onRefresh()
     }
 
     @objc func onRefresh() {
@@ -39,6 +40,7 @@ class TodayViewController: UITableViewController {
                 }
         }, onError: { error in
             self.textLabel.text = "不要扯我的呆毛，那是我的萌点所在..."
+            self.refreshControl?.endRefreshing()
         }, onCompleted: {
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
@@ -55,12 +57,7 @@ class TodayViewController: UITableViewController {
         let item = tableView.dequeueReusableCell(withIdentifier: "PhotoCard", for: indexPath) as! PhotoCard
         let data = today[indexPath.row]
 
-        var textColor: UIColor
-        if data.color.isDark() {
-            textColor = UIColor.white
-        } else {
-            textColor = UIColor.black
-        }
+        let textColor: UIColor = data.color.isDark() ? UIColor.white : UIColor.black
 
         item.titleLabel.text = data.title
         item.titleLabel.textColor = textColor
@@ -69,15 +66,16 @@ class TodayViewController: UITableViewController {
         let plain = md.attributedString().string
         item.subtitleLabel.text = plain.components(separatedBy: "\n")[0]
         item.subtitleLabel.textColor = textColor.withAlphaComponent(179 / 255)
+        item.thumbnail.af.setImage(
+            withURL: URL.init(string: data.cdnUrl)!,
+            placeholderImage: UIImage(named: "Placeholder"),
+            filter: AspectScaledToFillSizeWithRoundedCornersFilter(
+                size: item.thumbnail.frame.size,
+                radius: 16
+            ),
+            imageTransition: .crossDissolve(0.2)
+        )
 
-        Alamofire.request(data.cdnUrl).responseData(completionHandler: { result in
-            let image = UIImage(data: result.data!)
-            item.thumbnail.image = image
-        })
         return item
-    }
-
-    func isDarkColor(color: UIColor) -> Bool {
-        return false
     }
 }

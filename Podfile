@@ -6,7 +6,9 @@ target 'dailypics' do
   # use_frameworks!
 
   # Pods for dailypics
-  pod 'Moya/RxSwift', '~> 13.0'
+  pod 'Alamofire', '~> 5.0'
+  pod 'AlamofireImage', '~> 4.0'
+  pod 'Moya/RxSwift', '~> 14.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftyMarkdown'
 end
